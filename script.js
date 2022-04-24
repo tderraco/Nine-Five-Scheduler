@@ -1,3 +1,4 @@
+//create loop for past, present and future time blocks
 var currentDayDisplay = $('#currentDay');
 var currentHour = moment().hour()
 for (var i=9; i<=17; i++) {
@@ -12,6 +13,7 @@ for (var i=9; i<=17; i++) {
         textarea.addClass ("present")
     }
 }
+//click button for textbox and save btn for each timeblock
 var btn = $(".btn")
 btn.on("click", function(){
   var id = $(this).attr("data-id") 
@@ -19,6 +21,7 @@ btn.on("click", function(){
   var textArea = $("#" + id).val()
   console.log(textArea)
 })
+//Date and time with momentjs
 setInterval(function() {
     var rightNow = moment().format('MMM DD. YYYY [at] hh:mm:ss a');
     currentDayDisplay.text(rightNow);
